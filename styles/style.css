@@ -2,16 +2,24 @@
 @import url(normalize.css);
 @import url(responsive.css);
 
-a { 
-    text-decoration: none;
+a:link {
+    color: #faebd7
 }
 
-li {
-    list-style: none;
+a:visited {
+    color: #faebd7
+}
+
+a:hover {
+    color: #3a6899;
+    cursor: pointer;
+}
+
+a:active {
+    color: #faebd77f;
 }
 
 body {
-    font-size: 24px;
     margin: 0;
     background-color:  #faebd7;
     font-family: Arial, Helvetica, sans-serif;
@@ -20,7 +28,7 @@ body {
 
 .header {
     background-color: #000000;
-    width: 100vw;
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
@@ -31,39 +39,41 @@ body {
 .logo {
     background-color: #00000000;
     font-size: 30px;
-    padding: 20px;
-    color:  #faebd7;
+    padding-left: 20px;
+    color:  #3a6899;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .toolbar {
-    background-color: #00000000;
+    font-size: 18px;
     display: flex;
+    justify-items: center;
+    align-items: center;
     gap: 10px;
     color: #faebd7;
     padding-right: 20px;
 }
 
 .home {
-    background: url(/image/anonymous-thumb.jpg);
+    background: url(/image/big-sur-macbook-5k-b9.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 100vw;   
+    width: 100vw;
 }
 
 h2 {
-    font-size: 40px;
-    color: #045804;
+    font-size: 30px;
+    color: #faebd7;
     margin: 0 0 0 20px;
     padding-top: 300px;
     animation: fadeIn 1s ease-in;
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 60px;
     color: #faebd7;
     margin: 0 0 0 20px;
     animation: fadeIn 3s ease-in;
@@ -78,28 +88,104 @@ h1 {
 }
 
 div.about {
+    font-size: 24px;
     padding: 0 100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.mediabox {
-    list-style: none;
-    margin: 0 15px;
+div.project {
+    font-size: 24px;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.portfolio {
+    font-size: 24px;
+    padding: 0 100px;
+    margin-bottom: 70px;
+    gap: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.portfolio_block {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    height: 250px;
+    width: 250px;
+}
+
+.portfolio_image {
+    height: 200px;
+    width: 200px;
+    margin: 10px 0;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #3a6899;
     cursor: pointer;
+}
+
+.portfolio_image:hover {
+    border-radius: 5%;
+
+}
+
+div.mailbox {
+    font-size: 70px;
     display: flex;
     justify-content: center;
-    align-content: space-between;
-    border-color: #000000;
+    margin: 70px 0;
 }
 
 .footer {
-    background-color: black;
-    color: antiquewhite;
+    font-size: 12px;
+    background-color: #000000;
+    color: #faebd7;
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     padding-left: 20px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.mediabox {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    gap: 5px;
+}
+
+.mediabox:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactimage {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.contactimage:hover {
+    height: 40px;
+    width: 40px;
+    margin: 0 -2.5px;
 }
