@@ -1,7 +1,14 @@
-a { 
+* {
+    box-sizing: border-box;
     text-decoration: none;
-}
+    margin: 0;
+    padding: 0;
+  }
 
-li {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  li {
     list-style: none;
-}
+  }
