@@ -2,7 +2,6 @@
 @import url("normalize.css");
 @import url("responsive.css");
 
-
 a:link {
   color: #ffffff;
 }
@@ -14,6 +13,7 @@ a:visited {
 a:hover {
   color: #3a6899;
   cursor: pointer;
+  transition: linear 500ms;
 }
 
 a:active {
@@ -88,18 +88,10 @@ h1 {
   font-size: 3.5rem;
 }
 
-/* .heroimage {
-  height: 65vh;
-  border-radius: 5%;
-  margin-right: 100px;
-} */
-
 .nameblock {
   font-size: 1.7rem;
   padding: 30px 0px;
   margin: 40px 100px;
-  border: 1px solid #3a6899;
-  border-radius: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,36 +117,35 @@ div.portfolio {
   font-size: 1.5rem;
   padding: 0 100px 70px 100px;
   display: flex;
-  flex-flow: wrap;
+  flex-direction: column;
   justify-content: center;
   justify-items: center;
 }
 
 .portfolio_block {
+  width: 100%;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   align-content: space-between;
-  height: 300px;
-  width: 300px;
+}
+
+.portfolio_block a {
+  display: flex;
+  justify-content: center;
 }
 
 .portfolio_image {
   height: 200px;
-  width: 200px;
   margin: 10px 0;
-  border-radius: 100%;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #3a68994a;
+  border-radius: 10px;
+  border: solid #3a68994a;
   cursor: pointer;
 }
 
 .portfolio_image:hover {
   border-color: #3a6899;
-  border-width: 5px;
+  border-width: 1px;
   transition: linear 0.5s;
 }
 
@@ -198,27 +189,13 @@ div.portfolio {
   transform: scale(1.2);
 }
 
-.toggle-button {
-  position: absolute;
-  top: 12px;
-  right: 20px;
+.hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 28px;
-}
-
-.toggle-button .bar {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
 }
 
 .home-button {
   position: fixed;
-  right: 20px;
+  right: 35px;
   bottom: 80px;
   cursor: pointer;
   display: none;
@@ -249,20 +226,13 @@ div.portfolio {
     align-items: flex-start;
   }
 
-  .hamburger {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-  }
-
   .toolbar {
-    width: 100%;
     display: none;
-  }
-
-  .toolbar ul {
     width: 100%;
-    flex-direction: row;
+  }
+  
+  .toolbar ul {
+    flex-direction: column;
   }
 
   .toolbar li {
@@ -273,12 +243,24 @@ div.portfolio {
     padding: 0.5rem 1rem;
   }
 
-  .toolbar.active {
+  .hamburger {
+    position: absolute;
     display: flex;
+    right: 20px;
   }
 
-  .toggle-button {
-    display: flex;
+  .open-menu {
+    display: block;
+    margin: 20px 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .close-menu {
+    display: none;
+    margin: 20px 0;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .nameblock {
@@ -293,6 +275,10 @@ div.portfolio {
   div.portfolio {
     font-size: 1rem;
     padding: 0 50px;
+  }
+
+  .home-button {
+    right: 15px;
   }
 
   .home-button img {

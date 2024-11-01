@@ -1,16 +1,29 @@
-const toggleButton = document.querySelector('.toggle-button')
-const toolbar = document.querySelector('.toolbar')
+const hamburger = document.querySelector(".hamburger");
+const hamburgerIconClosed = document.querySelector(".open-menu");
+const hamburgerIconOpened = document.querySelector(".close-menu");
+const toolbar = document.querySelector(".toolbar");
+const homeButton = document.querySelector(".home-button");
 
-toggleButton.addEventListener('click',() => {
-    toolbar.classList.toggle('active')
+hamburger.addEventListener("click", () => {
+  const isActive = toolbar.classList.toggle("active");
+  toggleIcons(isActive);
 });
 
-const homeButton = document.querySelector('.home-button')
+function toggleIcons(isActive) {
+  hamburgerIconOpened.style.display = isActive ? "block" : "none";
+  hamburgerIconClosed.style.display = isActive ? "none" : "block";
+}
 
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 700){
-        homeButton.style.display = 'block';
-    } else {
-        homeButton.style.display = 'none';
-    }
+[hamburgerIconClosed, hamburgerIconOpened].forEach((icon) => {
+  icon.addEventListener("click", () => {
+    icon.style.animation = "rotation 1s";
+  });
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 650) {
+    homeButton.style.display = "block";
+  } else {
+    homeButton.style.display = "none";
+  }
 });
