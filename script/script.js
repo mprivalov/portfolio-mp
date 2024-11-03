@@ -3,6 +3,7 @@ const hamburgerIconClosed = document.querySelector(".open-menu");
 const hamburgerIconOpened = document.querySelector(".close-menu");
 const toolbar = document.querySelector(".toolbar");
 const homeButton = document.querySelector(".home-button");
+const navbarSection = document.querySelector('.navbar');
 
 hamburger.addEventListener("click", () => {
   const isActive = toolbar.classList.toggle("active");
