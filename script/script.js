@@ -1,6 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
-const hamburgerIconClosed = document.querySelector(".open-menu");
-const hamburgerIconOpened = document.querySelector(".close-menu");
+const barIcon = document.querySelector(".fa-bars");
+const xmarkIcon = document.querySelector(".fa-xmark");
 const toolbar = document.querySelector(".toolbar");
 const homeButton = document.querySelector(".home-button");
 const navbarSection = document.querySelector('.navbar');
@@ -11,14 +11,16 @@ hamburger.addEventListener("click", () => {
 });
 
 function toggleIcons(isActive) {
-  hamburgerIconOpened.style.display = isActive ? "block" : "none";
-  hamburgerIconClosed.style.display = isActive ? "none" : "block";
+  xmarkIcon.style.display = isActive ? "block" : "none";
+  barIcon.style.display = isActive ? "none" : "block";
 }
 
-[hamburgerIconClosed, hamburgerIconOpened].forEach((icon) => {
-  icon.addEventListener("click", () => {
-    icon.style.animation = "rotation 1s";
-  });
+barIcon.addEventListener("click", () => {
+  barIcon.style.animation = "rotation 1s";
+});
+
+xmarkIcon.addEventListener("click", () => {
+  xmarkIcon.style.animation = "rotation 1s";
 });
 
 window.addEventListener("scroll", () => {
